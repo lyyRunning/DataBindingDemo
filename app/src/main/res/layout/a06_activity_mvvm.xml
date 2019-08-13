@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="activity"
+            type="com.function.luo.activity.A06MvvmActivity" />
+
+        <variable
+            name="viewModel"
+            type="com.function.luo.viewmodel.A06MvvmViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{`学生姓名：` + viewModel.student.get().name}" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> viewModel.changeName()}"
+            android:text="点击修改Student姓名" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> viewModel.getMovieInfo()}"
+            android:text="点击请求电影信息" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.movieInfo.get() == null ? `没有电影信息` : viewModel.movieInfo.get().getSummary()}" />
+
+    </LinearLayout>
+
+</layout>

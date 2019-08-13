@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--布局以layout作为根布局-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- data标签 -->
+    <data>
+        <variable
+            name="presenter"
+            type="com.function.luo.activity.A01MainActivity.Presenter" />
+    </data>
+
+
+    <!--我们需要展示的布局-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{`姓名：`+presenter.name}"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> presenter.baseDataBinding()}"
+            android:text="@{`DataBinding基础使用` + presenter.message}"
+            android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:onClick="@{() -> presenter.recyclerView()}"
+            android:text="@{`DataBinding 展示列表` + presenter.message}" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:onClick="@{() -> presenter.mulTypeRecyclerView()}"
+            android:text="@{`DataBinding 展示多类型列表` + presenter.message}" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:onClick="@{() -> presenter.studyLibrary()}"
+            android:text="@{`MultiType库学习` + presenter.message}" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:onClick="@{() -> presenter.mvvm()}"
+            android:text="@{`DataBinding Mvvm` + presenter.message}" />
+
+
+    </LinearLayout>
+
+
+</layout>
